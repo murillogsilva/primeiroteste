@@ -1,31 +1,156 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f9;
 }
 
+/* Header and Navigation */
 header {
   text-align: center;
   background-color: #4CAF50;
   color: white;
-  padding: 1em 0;
+  padding: 1.5em 0;
+  position: relative;
 }
 
+header nav ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+header nav ul.menu li {
+  display: inline;
+}
+
+header nav ul.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s ease;
+}
+
+header nav ul.menu li a:hover {
+  background-color: #388E3C;
+  border-radius: 5px;
+}
+
+/* Main Content */
 main {
+  padding: 2em;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 3em;
+}
+
+#products .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5em;
+}
+
+#products .product {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1em;
 }
 
-section {
-  margin-bottom: 2em;
+#products .product img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
 }
 
+#products .product h3 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+#products .product p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Promotions Section */
+#promotions .promotion-banner {
+  background: #FFEB3B;
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#contact form input, #contact form textarea, #contact form button {
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+#contact form button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+  background-color: #388E3C;
+}
+
+/* Footer */
 footer {
   text-align: center;
   background-color: #4CAF50;
   color: white;
-  padding: 1em 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 1.5em 0;
+  margin-top: 2em;
+}
+
+footer .social-media a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+footer .social-media a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul.menu {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  #products .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
