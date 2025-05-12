@@ -3,87 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Depósito de Materiais de Construção</title>
+  <title>Brilar Materiais de Construção</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
     <nav>
+      <div class="logo">
+        <h2>Brilar</h2>
+      </div>
       <ul class="menu">
-        <li><a href="#about">Sobre Nós</a></li>
-        <li><a href="#products">Produtos</a></li>
-        <li><a href="#promotions">Promoções</a></li>
-        <li><a href="#contact">Contato</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+        <li><a href="#products"><i class="fas fa-tools"></i> Produtos</a></li>
+        <li><a href="#promotions"><i class="fas fa-tag"></i> Promoções</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
       </ul>
     </nav>
-    <h1>Depósito de Materiais de Construção</h1>
-    <p>Sua melhor opção em qualidade e preço!</p>
+    <div class="hero">
+      <h1>Brilar Materiais de Construção</h1>
+      <p>Sua melhor opção em qualidade e preço!</p>
+      <a href="#products" class="cta-button">Ver Produtos</a>
+    </div>
   </header>
+
   <main>
     <section id="about">
       <h2>Sobre Nós</h2>
-      <p>Somos um depósito de materiais de construção comprometido em oferecer os melhores produtos para sua obra.</p>
-    </section>
-    <section id="products">
-      <h2>Produtos</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="images/tijolo.jpg" alt="Tijolos">
-          <h3>Tijolos</h3>
-          <p>Tijolos de alta qualidade para sua construção.</p>
-        </div>
-        <div class="product">
-          <img src="images/cimento.jpg" alt="Cimento">
-          <h3>Cimento</h3>
-          <p>Cimento durável e confiável.</p>
-        </div>
-        <div class="product">
-          <img src="images/areia.jpg" alt="Areia">
-          <h3>Areia</h3>
-          <p>Areia selecionada para todas as suas necessidades.</p>
-        </div>
-        <div class="product">
-          <img src="images/ferragens.jpg" alt="Ferragens">
-          <h3>Ferragens</h3>
-          <p>Ferragens resistentes para reforçar sua obra.</p>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Somos uma empresa especializada em materiais de construção, comprometida em oferecer os melhores produtos para sua obra. Com mais de 20 anos de experiência no mercado, garantimos qualidade e satisfação em todos os nossos produtos.</p>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> Atendimento personalizado</li>
+            <li><i class="fas fa-check-circle"></i> Entrega rápida</li>
+            <li><i class="fas fa-check-circle"></i> Preços competitivos</li>
+            <li><i class="fas fa-check-circle"></i> Garantia em todos os produtos</li>
+          </ul>
         </div>
       </div>
     </section>
+
+    <section id="products">
+      <h2>Nossos Produtos</h2>
+      <div class="product-grid">
+        <div class="product">
+          <div class="product-image">
+            <img src="images/tijolo.jpg" alt="Tijolos">
+            <div class="product-overlay">
+              <a href="#" class="product-link">Ver Detalhes</a>
+            </div>
+          </div>
+          <h3>Tijolos</h3>
+          <p>Tijolos de alta qualidade para sua construção.</p>
+          <span class="price">A partir de R$ 1,50</span>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="images/cimento.jpg" alt="Cimento">
+            <div class="product-overlay">
+              <a href="#" class="product-link">Ver Detalhes</a>
+            </div>
+          </div>
+          <h3>Cimento</h3>
+          <p>Cimento durável e confiável para sua obra.</p>
+          <span class="price">A partir de R$ 25,00</span>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="images/areia.jpg" alt="Areia">
+            <div class="product-overlay">
+              <a href="#" class="product-link">Ver Detalhes</a>
+            </div>
+          </div>
+          <h3>Areia</h3>
+          <p>Areia selecionada para todas as suas necessidades.</p>
+          <span class="price">A partir de R$ 80,00/m³</span>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="images/ferragens.jpg" alt="Ferragens">
+            <div class="product-overlay">
+              <a href="#" class="product-link">Ver Detalhes</a>
+            </div>
+          </div>
+          <h3>Ferragens</h3>
+          <p>Ferragens resistentes para reforçar sua obra.</p>
+          <span class="price">Consulte preços</span>
+        </div>
+      </div>
+    </section>
+
     <section id="promotions">
       <h2>Promoções</h2>
       <div class="promotion-banner">
+        <i class="fas fa-gift"></i>
         <p><strong>Desconto de 20%</strong> em todos os tijolos até o final do mês!</p>
+        <a href="#contact" class="promo-button">Aproveite Agora</a>
       </div>
     </section>
+
     <section id="contact">
-      <h2>Contato</h2>
-      <p>Email: contato@deposito.com</p>
-      <p>Telefone: (11) 1234-5678</p>
+      <h2>Entre em Contato</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Rua Exemplo, 123 - Centro</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <p>(11) 1234-5678</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p>contato@brilar.com.br</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <p>Seg - Sáb: 8h às 18h</p>
+          </div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
       <div id="map">
-        <!-- Inserir mapa interativo do Google Maps -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345097304!2d144.96305!3d-37.814107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zTMOtdGltZSBhbGd1bSBleGVtcGxv!5e0!3m2!1sen!2sbr!4v1597410292854!5m2!1sen!2sbr"
           width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
-      <form>
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Depósito de Materiais de Construção. Todos os direitos reservados.</p>
-    <div class="social-media">
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Brilar Materiais</h3>
+        <p>Sua parceira em construção</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="#about">Sobre Nós</a></li>
+          <li><a href="#products">Produtos</a></li>
+          <li><a href="#promotions">Promoções</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociais</h3>
+        <div class="social-media">
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Brilar Materiais de Construção. Todos os direitos reservados.</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
