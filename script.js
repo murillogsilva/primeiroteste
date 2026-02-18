@@ -1,98 +1,44 @@
-// Adicione funcionalidades interativas aqui, se necessário
-console.log("Bem-vindo ao Depósito de Materiais de Construção!");
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const quoteForm = document.querySelector('#quote-form');
+const yearSpan = document.querySelector('#year');
+const themeToggle = document.querySelector('#theme-toggle');
 
-// Smooth scroll para links de navegação
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
   });
-});
+}
 
-// Animação de entrada para elementos
-const observerOptions = {
-  threshold: 0.1
-};
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', () => menu?.classList.remove('open'));
+});
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-in');
-      observer.unobserve(entry.target);
-    }
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, observerOptions);
+}, { threshold: 0.15 });
 
-// Elementos para animar
-document.querySelectorAll('section').forEach(section => {
-  section.classList.add('fade-in');
-  observer.observe(section);
-});
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-// Animação para produtos
-document.querySelectorAll('.product').forEach(product => {
-  product.classList.add('fade-in');
-  observer.observe(product);
-});
+if (quoteForm) {
+  quoteForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const nome = document.querySelector('#nome').value.trim();
+    const telefone = document.querySelector('#telefone').value.trim();
+    const bairro = document.querySelector('#bairro').value.trim();
+    const mensagem = document.querySelector('#mensagem').value.trim();
 
-// Validação do formulário
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Validação básica
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const message = document.getElementById('message').value;
-  
-  if (!name || !email || !phone || !message) {
-    alert('Por favor, preencha todos os campos.');
-    return;
-  }
-  
-  // Simulação de envio
-  const submitButton = form.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-  submitButton.textContent = 'Enviando...';
-  
-  setTimeout(() => {
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    form.reset();
-    submitButton.disabled = false;
-    submitButton.textContent = 'Enviar Mensagem';
-  }, 1500);
-});
-
-// Menu mobile
-const menuButton = document.createElement('button');
-menuButton.classList.add('menu-toggle');
-menuButton.innerHTML = '<i class="fas fa-bars"></i>';
-document.querySelector('nav').prepend(menuButton);
-
-menuButton.addEventListener('click', () => {
-  document.querySelector('.menu').classList.toggle('active');
-});
-
-// Adicionar classe de scroll para header
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-
-// Animação de preços
-document.querySelectorAll('.price').forEach(price => {
-  price.addEventListener('mouseover', () => {
-    price.style.transform = 'scale(1.1)';
+    const text = `Olá! Quero fazer uma cotação sem compromisso.\nMateriais: (papel/papelão/plástico)\nNome: ${nome}\nTelefone: ${telefone}\nBairro/Cidade: ${bairro}\nObservações: ${mensagem || '(Anexei as fotos dos materiais)'}`;
+    const url = `https://api.whatsapp.com/send?phone=5511947105318&text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener');
   });
-  
-  price.addEventListener('mouseout', () => {
-    price.style.transform = 'scale(1)';
-  });
+}
+
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+themeToggle?.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
 });
